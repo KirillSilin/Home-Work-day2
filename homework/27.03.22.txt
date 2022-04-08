@@ -1,0 +1,3 @@
+1. Доработать AnnotationConfigBasedApp и JavaConfigBasedApp
+с использованием Screen и Storage (дописать конфигурации AnnotationConfig и JavaConfig)
+2. Вывести Screen и Storage List в классе Computer

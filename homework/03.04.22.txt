@@ -1,0 +1,11 @@
+1) В blog.sql создать таблицы "user", role, user_role
+2) Создать под них Entity-классы (ru.specialist.spring.entity)
+
+Обратите внимание при создании класса User на экранирование названия:
+
+@Entity
+@Table(name = "\"user\"")
+class User {...}
+
+3) Создать UserRepository, RoleRepository (пакет ru.specialist.spring.dao.repository)
+4) Написать тест для созданных репозиториев (на подобии ru.specilist.spring.test.PostRepositoryTest)

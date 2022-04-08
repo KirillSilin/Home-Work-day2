@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="ru.specialist.spring.bean.AmdCPU" id="amdCpu"/>
+    <bean class="ru.specialist.spring.bean.IntelCPU" id="intelCpu"/>
+
+    <bean class="ru.specialist.spring.bean.KingstonRAM" id="kingstonRam" scope="prototype"/>
+    <bean class="ru.specialist.spring.bean.SonyRAM" id="sonyRam" scope="prototype"/>
+
+    <bean class="ru.specialist.spring.bean.DellScreen" id="dellScreen"/>
+    <bean class="ru.specialist.spring.bean.PhillipsScreen" id="phillipsScreen"/>
+
+    <bean class="ru.specialist.spring.bean.SeagateStorage" id="seagateStorage" scope="prototype"/>
+    <bean class="ru.specialist.spring.bean.WDStorage" id="wdStorage1"/>
+    <bean class="ru.specialist.spring.bean.WDStorage" id="wdStorage2"/>
+
+    <bean class="ru.specialist.spring.bean.Computer" id="myComputer">
+
+        <!--  Property injection -->
+        <!--        <property name="cpu" ref="intelCpu"/>-->
+        <!--        <property name="ramList">-->
+        <!--            <list>-->
+        <!--                <ref bean="kingstonRam" />-->
+        <!--                <ref bean="sonyRam" />-->
+        <!--                <ref bean="kingstonRam" />-->
+        <!--            </list>-->
+        <!--        </property>-->
+
+        <!--  Constructor injection -->
+        <constructor-arg name="cpu" ref="amdCpu"/>
+        <constructor-arg name="ramList">
+            <list>
+                <ref bean="kingstonRam"/>
+                <ref bean="sonyRam"/>
+                <ref bean="kingstonRam"/>
+            </list>
+        </constructor-arg>
+
+        <constructor-arg name="screen" ref="dellScreen"/>
+        <constructor-arg name="storageList">
+            <list>
+                <ref bean="seagateStorage"/>
+                <ref bean="wdStorage1"/>
+                <ref bean="wdStorage2"/>
+            </list>
+        </constructor-arg>
+
+
+    </bean>
+
+
+</beans>
